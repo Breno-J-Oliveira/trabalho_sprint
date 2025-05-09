@@ -1,112 +1,100 @@
-<div align="center">
-🚦 #SemáforoInteligente 🚦
-⭐️ ⭐️ ⭐️ ⭐️ ⭐️
+🚦 Visão Geral do Projeto
+O objetivo deste trabalho é desenvolver um semáforo inteligente, começando por conceitos básicos de Arduino e evoluindo até uma simulação de cruzamento real com múltiplas vias e botões para pedestres. Cada protótipo adiciona uma funcionalidade nova, mostrando a progressão das ideias e o ganho de complexidade passo a passo.
 
-</div>
-📋 #Sumário
-🚀 #VisãoGeral
-
-🔧 #Protótipos
-
-1️⃣ #Protótipo1: SemáforoBásico
-
-2️⃣ #Protótipo2: BotãoPedestres
-
-3️⃣ #Protótipo3: SensorInfrared
-
-🎯 #ProtótipoFinal: CruzamentoCompleto
-
-⚙️ #ComoUsar
-
-🤝 #Contribuições
-
-📝 #Licença
-
-🚀 #VisãoGeral
-Bem-vindo ao Semáforo Inteligente! Este repositório mostra a evolução de um sistema de controle de tráfego via Arduino, partindo de um simples sequenciador de LEDs até uma simulação completa de cruzamento urbano com detecção de veículos e chamadas de pedestres. A cada etapa, incorporamos novas funcionalidades, reforçando conceitos de IoT, programação embarcada e design de sistemas adaptativos. Vamos juntos explorar o passo a passo!
-
-🔧 #Protótipos
-1️⃣ Protótipo 1: #SemáforoBásico
-📌 Link no Tinkercad:
-
+🔧 Protótipo 1: Semáforo Básico
+Link no Tinkercad:
 https://www.tinkercad.com/things/crLNLab5RRq-trabalha01
 
-#Objetivo
-Conectar LEDs (🟢 verde, 🟡 amarelo, 🔴 vermelho) ao Arduino e programar o ciclo de luzes.
+Objetivo: Aprender a conectar LEDs à placa Arduino e programar a sequência de luzes.
 
-#SequênciaDeLuzes (loop infinito):
+Componentes:
 
-cpp
-Copiar
-Editar
-digitalWrite(verde, HIGH);   // 🟢 ON por 5s  
-delay(5000);  
-digitalWrite(verde, LOW);  
+3 LEDs (verde, amarelo e vermelho)
 
-digitalWrite(amarelo, HIGH); // 🟡 ON por 2s  
-delay(2000);  
-digitalWrite(amarelo, LOW);  
+Resistores de 220 Ω
 
-digitalWrite(vermelho, HIGH);// 🔴 ON por 5s  
-delay(5000);  
-digitalWrite(vermelho, LOW);
-✅ Destaque: Base fundamental para entender hardware, protoboard e lógica Arduino.
+Placa Arduino Uno
 
-2️⃣ Protótipo 2: #BotãoPedestres
-📌 Link no Tinkercad:
+Protoboard e fios de conexão
 
+Lógica Implementada:
+
+Acende o LED verde por 5 s
+
+Passa para o amarelo por 2 s
+
+Fecha no vermelho por 5 s
+
+Repete em loop
+
+Essa etapa garantiu o entendimento da estrutura básica de hardware e software, servindo de base para as melhorias seguintes.
+
+🚶 Protótipo 2: Botão para Pedestres
+Link no Tinkercad:
 https://www.tinkercad.com/things/fGDRABPrAXn-trabalho02
 
-#Novidade
-Adicionamos um botão de pedestre (🚶‍♂️) para solicitar travessia.
+Novidade: Inclusão de um botão que simula o pedido de travessia de pedestres.
 
-#FluxoDeTravessia:
+Como Funciona:
 
-Semáforo de veículos no ciclo normal.
+Enquanto o semáforo de veículos está no ciclo normal, o botão fica aguardando ser pressionado.
 
-Pedestre pressiona botão → sinal “pedido registrado”.
+Ao apertar, o código armazena o pedido e, quando chegar a vez, força o semáforo de carros a ficar vermelho, permitindo que o LED “pedestre verde” acenda.
 
-No próximo ciclo, semáforo de carros vira 🔴 e LED “pedestre verde” acende.
+Benefício: Aproxima o sistema da realidade, onde pedestres podem solicitar a travessia de forma autônoma.
 
-⚡ Impacto: Simula o controle real, garantindo segurança e autonomia para pedestres.
-
-3️⃣ Protótipo 3: #SensorInfrared
-📌 Link no Tinkercad:
-
+👁️ Protótipo 3: Sensor Infravermelho
+Link no Tinkercad:
 https://www.tinkercad.com/things/lXt8ejKZsI6-trabalho03
 
-#ComponenteNovo
-Sensor infravermelho (IR) para detecção de veículos.
+Novo Componente: Sensor infravermelho (IR) para detecção de veículos.
 
-#LógicaAdaptativa:
+Objetivo: Tornar o semáforo “inteligente” ao ajustar os tempos de cada luz conforme presença de carros.
 
-🌵 Sem tráfego → reduz tempo do 🟢 verde.
+Fluxo de Funcionamento:
 
-🚗 Alto fluxo → estende tempo do 🟢 verde.
+Sensor IR monitora a via;
 
-🔍 Benefício: Sistema mais eficiente e responsivo, reduzindo esperas desnecessárias.
+Se não há carro detectado, reduz o tempo do verde (otimizando espera desnecessária);
 
-🎯 Protótipo Final: #CruzamentoCompleto
-📌 Link no Tinkercad:
+Se detectar tráfego intenso, mantém o verde por mais tempo (evita congestionamento).
 
+Vantagem: Eficiência nas trocas de sinal, simulando semáforos adaptativos de grandes centros urbanos.
+
+🚦🏙️ Protótipo Final: Cruzamento Completo
+Link no Tinkercad:
 https://www.tinkercad.com/things/4wrWFSQffOk-sprint3
 
-#Cenário
-Simulação de cruzamento entre duas vias (“+”), com:
+Cenário: Duas vias interseccionando em “T” (ou “+”), com semáforos independentes para cada direção.
 
-🚦 Dois semáforos independentes
+Funcionalidades Integradas:
 
-🚶 Botões de pedestres em ambos os lados
+Ciclo de semáforo para cada via (verde/amarelo/vermelho)
 
-👁️ Sensor IR em cada pista
+Botões para pedestres em ambos os lados
 
-#SincronizaçãoEControle:
+Detecção de veículos por sensor IR
 
-Código modular: funções separadas para veículos e pedestres.
+Lógica de sincronização para evitar conflitos de sinal
 
-Janela de prioridade para travessia de pedestres.
+Destaques do Código:
 
-Ajuste dinâmico de tempos conforme fluxo de trânsito.
+Estrutura modular (funções separadas para cada semáforo e pedestre)
 
-🌟 Resultado: Representação realista de um sistema urbano inteligente e cooperativo.
+Controle de prioridades (pedestres têm janela especial de travessia)
+
+Ajuste de tempos dinâmico conforme detecção de tráfego
+
+Este protótipo final simula de forma realista a operação de um cruzamento urbano, demonstrando como um semáforo pode ser programado para reagir a diferentes estímulos em tempo real.
+
+🎯 Conclusão
+Ao longo dos quatro protótipos, partimos de um simples sequenciador de LEDs até chegar a um semáforo inteligente capaz de:
+
+Controlar fluxos de veículos e pedestres;
+
+Ajustar tempos de sinal via sensor IR;
+
+Simular cruzamentos reais com múltiplas vias e prioridades.
+
+Esse projeto mostra, de maneira prática, a integração de hardware (Arduino, sensores, botões) e software (lógica em C/C++) para criar sistemas inteligentes de controle de tráfego. Fique à vontade para explorar cada link no Tinkercad, clonar o código e propor melhorias!
 
