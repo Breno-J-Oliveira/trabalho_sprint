@@ -1,4 +1,5 @@
 🚦 Visão Geral do Projeto
+
 O objetivo deste trabalho é desenvolver um semáforo inteligente, começando por conceitos básicos de Arduino e evoluindo até uma simulação de cruzamento real com múltiplas vias e botões para pedestres. Cada protótipo adiciona uma funcionalidade nova, mostrando a progressão das ideias e o ganho de complexidade passo a passo.
 
 🔧 Protótipo 1: Semáforo Básico
