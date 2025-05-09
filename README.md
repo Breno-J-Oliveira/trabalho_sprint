@@ -1,91 +1,112 @@
 <div align="center">
-🚦 Semáforo Inteligente
-
-
+🚦 #SemáforoInteligente 🚦
+⭐️ ⭐️ ⭐️ ⭐️ ⭐️
 
 </div>
-📋 Sumário
-Visão Geral
+📋 #Sumário
+🚀 #VisãoGeral
 
-Protótipos
+🔧 #Protótipos
 
-Protótipo 1: Semáforo Básico
+1️⃣ #Protótipo1: SemáforoBásico
 
-Protótipo 2: Botão para Pedestres
+2️⃣ #Protótipo2: BotãoPedestres
 
-Protótipo 3: Sensor Infravermelho
+3️⃣ #Protótipo3: SensorInfrared
 
-Protótipo Final: Cruzamento Completo
+🎯 #ProtótipoFinal: CruzamentoCompleto
 
-Como Usar
+⚙️ #ComoUsar
 
-Contribuições
+🤝 #Contribuições
 
-Licença
+📝 #Licença
 
-🚀 Visão Geral
-Este projeto demonstra a evolução de um semáforo inteligente, desde a ligação de LEDs em um Arduino até um sistema que simula um cruzamento urbano completo com detecção de veículos e botão para pedestres. Cada etapa incorpora novas tecnologias e conceitos de programação embarcada, mostrando como construir soluções IoT simples e eficientes. 
-daily.dev
+🚀 #VisãoGeral
+Bem-vindo ao Semáforo Inteligente! Este repositório mostra a evolução de um sistema de controle de tráfego via Arduino, partindo de um simples sequenciador de LEDs até uma simulação completa de cruzamento urbano com detecção de veículos e chamadas de pedestres. A cada etapa, incorporamos novas funcionalidades, reforçando conceitos de IoT, programação embarcada e design de sistemas adaptativos. Vamos juntos explorar o passo a passo!
 
-🔧 Protótipos
-Protótipo 1: Semáforo Básico
-Link Tinkercad:
+🔧 #Protótipos
+1️⃣ Protótipo 1: #SemáforoBásico
+📌 Link no Tinkercad:
+
 https://www.tinkercad.com/things/crLNLab5RRq-trabalha01
 
-Objetivo: Conectar LEDs (verde, amarelo, vermelho) ao Arduino e implementar a lógica ciclicamente.
-Sequência de Luzes:
+#Objetivo
+Conectar LEDs (🟢 verde, 🟡 amarelo, 🔴 vermelho) ao Arduino e programar o ciclo de luzes.
+
+#SequênciaDeLuzes (loop infinito):
 
 cpp
 Copiar
 Editar
-digitalWrite(verde, HIGH);
-delay(5000);
-digitalWrite(verde, LOW);
-digitalWrite(amarelo, HIGH);
-delay(2000);
-digitalWrite(amarelo, LOW);
-digitalWrite(vermelho, HIGH);
-delay(5000);
-digitalWrite(vermelho, LOW);
-(Loop infinito) 
-GitHub Docs
+digitalWrite(verde, HIGH);   // 🟢 ON por 5s  
+delay(5000);  
+digitalWrite(verde, LOW);  
 
-Protótipo 2: Botão para Pedestres
-Link Tinkercad:
+digitalWrite(amarelo, HIGH); // 🟡 ON por 2s  
+delay(2000);  
+digitalWrite(amarelo, LOW);  
+
+digitalWrite(vermelho, HIGH);// 🔴 ON por 5s  
+delay(5000);  
+digitalWrite(vermelho, LOW);
+✅ Destaque: Base fundamental para entender hardware, protoboard e lógica Arduino.
+
+2️⃣ Protótipo 2: #BotãoPedestres
+📌 Link no Tinkercad:
+
 https://www.tinkercad.com/things/fGDRABPrAXn-trabalho02
 
-Novidade: Inclusão de um botão para que o pedestre possa solicitar a travessia.
-Fluxo Adicional:
+#Novidade
+Adicionamos um botão de pedestre (🚶‍♂️) para solicitar travessia.
 
-Aguarda pressionamento do botão;
+#FluxoDeTravessia:
 
-Ao ativar, registra o pedido;
+Semáforo de veículos no ciclo normal.
 
-Próxima transição força semáforo de veículos ao vermelho e habilita LED “pedestre verde”. 
-daily.dev
+Pedestre pressiona botão → sinal “pedido registrado”.
 
-Protótipo 3: Sensor Infravermelho
-Link Tinkercad:
+No próximo ciclo, semáforo de carros vira 🔴 e LED “pedestre verde” acende.
+
+⚡ Impacto: Simula o controle real, garantindo segurança e autonomia para pedestres.
+
+3️⃣ Protótipo 3: #SensorInfrared
+📌 Link no Tinkercad:
+
 https://www.tinkercad.com/things/lXt8ejKZsI6-trabalho03
 
-Componente: Sensor IR para detectar presença de veículos.
-Lógica Adaptativa:
+#ComponenteNovo
+Sensor infravermelho (IR) para detecção de veículos.
 
-Sem tráfego → reduz tempo de verde;
+#LógicaAdaptativa:
 
-Tráfego intenso → estende tempo de verde. 
-Shields
+🌵 Sem tráfego → reduz tempo do 🟢 verde.
 
-Protótipo Final: Cruzamento Completo
-Link Tinkercad:
+🚗 Alto fluxo → estende tempo do 🟢 verde.
+
+🔍 Benefício: Sistema mais eficiente e responsivo, reduzindo esperas desnecessárias.
+
+🎯 Protótipo Final: #CruzamentoCompleto
+📌 Link no Tinkercad:
+
 https://www.tinkercad.com/things/4wrWFSQffOk-sprint3
 
-Cenário: Duas vias interseccionando, cada uma com semáforo, sensor IR e botão de pedestre.
-Sincronização:
+#Cenário
+Simulação de cruzamento entre duas vias (“+”), com:
 
-Modularização do código em funções para cada semáforo e pedestre;
+🚦 Dois semáforos independentes
 
-Prioridade de travessia para pedestres em janela específica;
+🚶 Botões de pedestres em ambos os lados
 
-Ajuste dinâmico de tempos conforme detecção de tráfego. 
-daily.dev
+👁️ Sensor IR em cada pista
+
+#SincronizaçãoEControle:
+
+Código modular: funções separadas para veículos e pedestres.
+
+Janela de prioridade para travessia de pedestres.
+
+Ajuste dinâmico de tempos conforme fluxo de trânsito.
+
+🌟 Resultado: Representação realista de um sistema urbano inteligente e cooperativo.
+
